@@ -1,28 +1,28 @@
 //Q9. Write a program to reverse a stack.
 
-let st = [];
+let stack = [];
 
 function insert_at_bottom(x) {
-  if (st.length == 0) st.push(x);
+  if (stack.length == 0) stack.push(x);
   else {
-    let a = st.pop();
+    let a = stack.pop();
     insert_at_bottom(x);
 
-    st.push(a);
+    stack.push(a);
   }
 }
 
 function reverse() {
-  if (st.length > 0) {
-    let x = st.pop();
+  if (stack.length > 0) {
+    let x = stack.pop();
 
     insert_at_bottom(x);
   }
 }
-st.push("1");
-st.push("2");
-st.push("3");
-st.push("4");
+stack.push("1");
+stack.push("2");
+stack.push("3");
+stack.push("4");
 
 reverse();
-console.log(st.join(" "));
+console.log(stack.join(" "));
